@@ -28,6 +28,7 @@
   </form>
 
   <!-- READ: tasks are shown here -->
+   <p id="counter"></p>
   <ul id="task-list"></ul>
 
   <script>
@@ -54,6 +55,8 @@
         li.querySelector("span").textContent = task.text;
         list.appendChild(li);
       });
+      const doesCount = tasks.filter(t => t.done).length;
+      document.getElementById("counter").textcount= '${doesCount} of ${tasks.length} tasks done';
     }
 
     // CREATE: add a new task
